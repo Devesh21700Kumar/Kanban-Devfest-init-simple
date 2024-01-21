@@ -5,50 +5,7 @@ import { useParams } from "react-router-dom";
 const Comments = () => {
 	const { category, id } = useParams();
 	const [comment, setComment] = useState("");
-	const [commentList, setCommentList] = useState([{
-        pending: {
-            title: "pending",
-            items: [
-                {
-                    id: Math.random().toString(36).substring(2, 10),
-                    title: "Send the Figma file to Dima",
-                    comments: [],
-                },
-            ],
-        },
-        ongoing: {
-            title: "ongoing",
-            items: [
-                {
-                    id: Math.random().toString(36).substring(2, 10),
-                    title: "Review GitHub issues",
-                    comments: [
-                        {
-                            name: "David",
-                            text: "Ensure you review before merging",
-                            id: Math.random().toString(36).substring(2, 10),
-                        },
-                    ],
-                },
-            ],
-        },
-        completed: {
-            title: "completed",
-            items: [
-                {
-                    id: Math.random().toString(36).substring(2, 10),
-                    title: "Create technical contents",
-                    comments: [
-                        {
-                            name: "Dima",
-                            text: "Make sure you check the requirements",
-                            id: Math.random().toString(36).substring(2, 10),
-                        },
-                    ],
-                },
-            ],
-        },
-    }]);
+	const [commentList, setCommentList] = useState([]);
 
 	const addComment = (e) => {
 		e.preventDefault();

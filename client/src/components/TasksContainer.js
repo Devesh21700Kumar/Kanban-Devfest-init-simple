@@ -3,15 +3,60 @@ import { Link } from "react-router-dom";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
 const TasksContainer = () => {
-	const [tasks, setTasks] = useState({});
+	const [tasks, setTasks] = useState({
+		pending: {
+			title: "pending",
+			items: [
+				{
+					id: Math.random().toString(36).substring(2, 10),
+					title: "Send the Figma file to Dima",
+					comments: [],
+				},
+			],
+		},
+		ongoing: {
+			title: "ongoing",
+			items: [
+				{
+					id: Math.random().toString(36).substring(2, 10),
+					title: "Review GitHub issues",
+					comments: [
+						{
+							name: "David",
+							text: "Ensure you review before merging",
+							id: Math.random().toString(36).substring(2, 10),
+						},
+					],
+				},
+			],
+		},
+		completed: {
+			title: "completed",
+			items: [
+				{
+					id: Math.random().toString(36).substring(2, 10),
+					title: "Create technical contents",
+					comments: [
+						{
+							name: "Dima",
+							text: "Make sure you check the requirements",
+							id: Math.random().toString(36).substring(2, 10),
+						},
+					],
+				},
+			],
+		},
+	})
 
 	useEffect(() => {
-		function fetchTasks() {
+		/*function fetchTasks() {
 			fetch("http://localhost:4000/api")
 				.then((res) => res.json())
 				.then((data) => setTasks(data));
-		}
-		fetchTasks();
+		}*/
+
+		// setTasks
+		// fetchTasks();
 	}, []);
 
 
